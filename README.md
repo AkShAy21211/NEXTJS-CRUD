@@ -34,9 +34,9 @@ Make sure you have the following installed:
 ### Install the dependencies
 
 npm install
-# or
+
 yarn install
-# or
+
 pnpm install
 
 
