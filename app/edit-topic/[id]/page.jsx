@@ -15,14 +15,14 @@ const getTopicById = async (id) => {
     console.log(error);
   }
 };
-const page = async ({ params }) => {
+const Page = async ({ params }) => {
   const { id } = params;
   const topic = await getTopicById(id);
-  console.log(topic);
+
   
   const {title, description} = topic;
   
   return <EditTopicForm id={id} title={title} description={description}/>;
 };
 
-export default page;
+export default Page;
