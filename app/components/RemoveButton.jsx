@@ -11,7 +11,7 @@ const RemoveButton = ({ id }) => {
 
       if (confirm) {
         const response = await fetch(
-          `http://localhost:3000/api/topics?id=${id}`,
+          process.env.NEXT_PUBLIC_API_URL+`/api/topics?id=${id}`,
           {
             method: "DELETE",
             headers: {

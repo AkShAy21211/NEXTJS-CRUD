@@ -30,7 +30,7 @@ const EditTopicForm = ({ id, title, description }) => {
     }
     try {
       e.preventDefault();
-      await fetch(`http://localhost:3000/api/topics/${id}`, {
+      await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

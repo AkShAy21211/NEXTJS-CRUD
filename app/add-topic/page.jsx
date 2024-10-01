@@ -24,7 +24,7 @@ const Page = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/topics", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/topics", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

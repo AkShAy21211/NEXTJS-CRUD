@@ -3,7 +3,7 @@ import React from "react";
 
 const getTopicById = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/topics/${id}`, {
+    const response = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/topics/${id}`, {
       cache: "no-store",
     });
     if (!response.ok) {
