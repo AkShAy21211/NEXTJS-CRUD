@@ -1,6 +1,9 @@
+export const dynamic = 'force-dynamic';
 import RemoveButton from "./RemoveButton";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
+
+console.log(process.env.NEXT_PUBLIC_API_URL);
 
 export const getTopics = async () => {
   try {
@@ -20,7 +23,6 @@ export const getTopics = async () => {
 
 const TopicList = async () => {
   const topics = await getTopics();
-      console.log(topics);
 
   return (
     <>

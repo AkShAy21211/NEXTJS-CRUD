@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import EditTopicForm from "@/app/components/EditTopicForm";
 import React from "react";
 
