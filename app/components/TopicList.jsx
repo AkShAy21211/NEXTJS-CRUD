@@ -1,13 +1,10 @@
 export const dynamic = "force-dynamic";
+
 import RemoveButton from "./RemoveButton";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 
 const TopicList = async () => {
-
-
-
-
   const getTopics = async () => {
     try {
       const response = await fetch(
@@ -22,22 +19,26 @@ const TopicList = async () => {
 
       return response.json();
     } catch (error) {
-      console.log(error);
+      console.log("Error fetching topics:", error);
+      return [];
     }
   };
-  
+
   const topics = await getTopics();
+
+  if (topics.length === 0) {
+    return <p className="text-red-500">No topics found or failed to load topics.</p>;
+  }
 
   return (
     <>
-      {topics.map((t, i) => (
+      {topics.map((t) => (
         <div
           key={t._id}
-          className="p-4 flex  justify-between  border-slate-300 gap-5 my-3 items-center"
+          className="p-4 flex justify-between border-slate-300 gap-5 my-3 items-center"
         >
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
-
             <p>{t.description}</p>
           </div>
           <div className="flex gap-2">
